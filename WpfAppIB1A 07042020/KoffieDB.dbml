@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="koffiedb" Class="KoffieDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\sqlexpress;Initial Catalog=koffiedb;Integrated Security=True" SettingsObjectName="WpfAppIB1A_07042020.Properties.Settings" SettingsPropertyName="koffiedbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.koffie" Member="koffies">
+    <Type Name="koffie">
+      <Column Name="kid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="koffienaam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="koffie_kofsmaak" Member="kofsmaaks" ThisKey="kid" OtherKey="kid" Type="kofsmaak" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kofsmaak" Member="kofsmaaks">
+    <Type Name="kofsmaak">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="koffie_kofsmaak" Member="koffie" ThisKey="kid" OtherKey="kid" Type="koffie" IsForeignKey="true" />
+      <Association Name="smaak_kofsmaak" Member="smaak" ThisKey="sid" OtherKey="sid" Type="smaak" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.smaak" Member="smaaks">
+    <Type Name="smaak">
+      <Column Name="sid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="smaak" Member="smaaknaam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="smaak_kofsmaak" Member="kofsmaaks" ThisKey="sid" OtherKey="sid" Type="kofsmaak" />
+    </Type>
+  </Table>
+</Database>

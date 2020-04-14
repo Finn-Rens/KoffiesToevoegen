@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KoffieDB">
+  <DataContextMoniker Name="/KoffieDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="46096d60-dab4-48df-91ea-2509cf509427" absoluteBounds="2.625, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KoffieDBDataContext/koffie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca5ec985-2a69-41b7-b745-c2520e9b1f99" absoluteBounds="2.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bd1f6d2-dad7-4885-8740-c73cefca65bf" absoluteBounds="2.625, 2.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/KoffieDBDataContext/kofsmaak" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7791b3d-8272-4884-a33b-00323adcef53" absoluteBounds="2.64, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6fa32f2-3eae-4aa9-9755-1f4ba630c71b" absoluteBounds="2.625, 4.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KoffieDBDataContext/smaak" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a373686-a2e6-46b6-bf63-f725364ac930" absoluteBounds="2.64, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 1.69399251302083); (3.625 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KoffieDBDataContext/koffie/koffie_kofsmaak" />
+      <nodes>
+        <classShapeMoniker Id="46096d60-dab4-48df-91ea-2509cf509427" />
+        <classShapeMoniker Id="3bd1f6d2-dad7-4885-8740-c73cefca65bf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 4.25); (3.625 : 3.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KoffieDBDataContext/smaak/smaak_kofsmaak" />
+      <nodes>
+        <classShapeMoniker Id="a6fa32f2-3eae-4aa9-9755-1f4ba630c71b" />
+        <classShapeMoniker Id="3bd1f6d2-dad7-4885-8740-c73cefca65bf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
